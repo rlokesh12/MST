@@ -1,0 +1,476 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>MST | 18</title>
+<meta name="description" content="">  
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+.card {
+  box-shadow: 0 11px 8px 0 rgba(0, 0, 0, 0.9);
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+display:inline-block;
+    margin: 20px;
+	background:rgba(65,187,23,0.3);
+	background:rgba(255,255,255,0.5);
+	padding-top:20px;
+}
+
+.title {
+	line-height:55px;
+  color: #000;
+font-weight:bold;
+  font-size: 18px;
+}
+
+.reg_btn {
+    transition-duration: 1s;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.reg_btn:hover, a:hover {
+   
+  color:#41bb17;
+}
+
+#icons{
+	width:100px;
+	color:white;
+}
+
+#left_side{
+	float:left;
+	text-align:center;
+}
+
+#center_side{
+	float:left;
+	margin-left:40px;
+	text-align:center;
+}
+
+#right_side{
+	float:right;
+	text-align:center;
+}
+#title_2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+        font-size: 18px;
+}
+    #title_3{
+	font-family:Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 25px;
+}
+
+#mnit_logo{
+	
+	width:100px;
+	margin:20px;
+}
+#mst_logo{
+	width:150px;
+	position:fixed;
+	right:0;
+	top:0;
+	
+	   
+
+}
+#thank_logo{
+	width:200px;
+	
+	   
+
+}
+#main{
+ background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width:100%;
+  height:100%;
+}
+.input-icon{
+margin-top:20px;
+}
+    #headerl{
+        position:fixed;
+        float:left;
+        
+    }
+    #headerr2{
+        position:fixed;
+        top:40%;
+		right:0;
+		padding: 20px;
+		
+        
+    }
+#heading{
+	font-size:20px;
+	line-height:55px;
+	font-weight:bold;
+	color:#41bb17;
+    font-family:Arial, Helvetica, sans-serif;
+}
+select {
+
+  width: 100%;
+  }
+  
+ #proceed_btn{
+	background:transparent;
+	border:2px solid #41bb17;
+	padding:10px;
+	padding-left:20px;
+	padding-right:20px;
+	color:#fff;
+	border-radius: 4.2px;
+       transition-duration: 1s;
+ }
+ 
+ #proceed_btn:hover{
+	background-color:#41bb17;
+ }
+  #proceed2_btn{
+	background:transparent;
+	border:2px solid #41bb17;
+	padding:10px;
+	padding-left:20px;
+	padding-right:20px;
+	color:#fff;
+	border-radius: 4.2px;
+	font-size:23px;
+      transition-duration: 1s;
+ }
+ 
+ #proceed2_btn:hover{
+	background-color:#41bb17;
+ }
+ 
+ .container {
+    max-width: 38em;
+    padding: 1em 3em 2em 3em;
+    margin: 0em auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4.2px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+	border:2px solid #41bb17;
+	
+}
+
+  
+    
+#front_cen{
+	position:relative;
+	top:110;
+}
+#main_subtitle{
+	color:#fff;
+	font-size:25px;
+	padding-bottom:35px;
+}
+#main_title{
+	color:#fff;
+	font-size:50px;
+    text-align: :center;
+}
+#front_btn{
+padding-top:65px;
+}
+#top{
+	height:100%;
+}
+#middle{
+    display: none;
+transition-delay: 2s;
+background-image:url(img/background2.jpg); 
+background-repeat:no-repeat; 
+background-size:cover; 
+background-position:center; 
+background-attachment: fixed;
+}
+#middle_main{
+ background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width:100%;
+  padding-bottom:50px;
+  padding-top:50px;
+}
+#bottom{
+background-image:url(/static/img/background4.jpg);
+background-repeat:no-repeat; 
+background-size:cover; 
+background-position:center; 
+background-attachment: fixed;
+}
+#bottom_main{
+ background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width:100%;
+  padding-bottom:50px;
+  padding-top:50px;
+}
+#side_option{
+padding:20px;
+background-color:#fff;
+width:60px;
+height:60px;
+border-radius: 0 25px 0 0; 
+margin-top:-50px;
+}
+
+#footer{
+ background-color: rgba(0, 0, 0, 0.5);
+}
+
+#final_box{
+        margin-top: 50px;
+padding-top:50px;
+width:300px;
+height:150px;
+ background-color: rgba(0, 0,0, 0.5);
+ border-radius:25px;
+
+}
+#main_motto{
+margin-top:20px;
+    font-size: :20px;
+}
+    #ico .check_box{
+        display:none;
+        
+    }
+    
+   input[type="checkbox"]{
+    width: auto; 
+    }
+    
+       #br{
+           display:none;
+           
+       }
+    #rules_link a{
+		text-decoration:none;
+		color:white;
+		font-size:15px;
+		}
+		
+		#rules_link a:hover{
+		text-decoration:none;
+		color:#41bb17;
+
+		}
+	#bottom_bar{
+		background-color:#000;
+		   width:100%;
+			height:50px;
+	}
+#bottom_bar{
+position:absolute;
+bottom:0;
+color:#fff;
+text-align:center;
+padding-top:10px;
+}	
+#main_motto{
+font-size:20px;
+}
+   @media only screen and (max-width: 500px)  {
+    #front_btn {
+    padding-top: 0;
+    }
+        #mst_logo {
+    width: 74px;
+    
+}
+        #mnit_logo {
+    width: 43px;
+    
+}
+        #front_btn #proceed_btn {
+    margin-top: 20px;
+}
+       #main_subtitle {
+    padding-top: 25px;
+    font-size: 20px;
+    
+}
+       #main_title {
+    font-size: 35px;  
+}
+       .container {
+    
+    width: 95%;
+       
+    }
+    #main_motto {
+   
+    padding-top: 0px;
+    }
+        #headerl{
+        position:absolute;
+        float:left;
+        
+    }
+    #headerr{
+        
+        
+    }
+       #top {
+    
+           padding: 20px;}
+       #bar{
+           display:none;
+           
+       }
+       #br{
+           display:block;
+           
+       }
+       .modal-body {
+    
+    height: 350px;
+    
+}
+       #left_side {
+    float: none;
+    
+}
+       #right_side {
+    float: none;
+           margin-top: 75px;
+    
+}
+
+ #center_side {
+    float: none;
+           margin-top: 75px;
+		   margin-left:0px;
+    
+}
+       .modal-content {
+   
+    width: 95%;
+    
+}
+
+#gym_modal .modal-body {
+    height: 430px;
+}
+       #mst_logo{
+	   width:82px;
+	   margin-bottom: 15px;
+	   }
+	   #headerr2 {
+ 
+    top: 56%;
+   
+   
+}
+#main_motto{
+font-size:13px;
+}
+#bottom_bar {
+  
+    font-size: 13px;
+    
+}
+    }
+    
+</style>
+</head>
+
+<body style="background:rgba(0,0,0,0.999); background-image:url(/static/img/background3.jpg); background-repeat:no-repeat; background-size:cover; background-position:center; background-attachment: fixed;   ">
+	<div id="main">
+    <div id="headerl">
+			<div id="logo">
+                <a href="http://www.mnit.ac.in" target="_blank" ><img src="/static/img/mnit_logo.jpg" id="mnit_logo"></a>	 <a href="http://www.mstmnit.com" target="_blank" ><img src="/static/img/mst_logo.PNG" id="mst_logo"></a>
+       </div>
+	    	</div>  
+			
+			<div id="headerr2">
+	<a href="https://www.facebook.com/msf.mnit/" target="_blank"><i class="fa fa-facebook" style="font-size:20px; color:#fff; "></i></a><br>		<br>	   
+				  <a href="https://www.instagram.com/msf.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; color:#fff;"></i></a>
+		</div> 
+         
+			
+        
+	<div id="top">
+       
+		
+	
+	
+		<div id="front_cen">
+            
+			<center>
+				
+				<div id="main_title">
+                    <center>
+                        <span style="text-align :center;"><span style="color:#41bb17;">M</span>alaviya <span style="color:#41bb17;">S</span>ports <span style="color:#41bb17;">T</span>ournament <span style="color:#41bb17;">'18</span</span>
+                        </center>
+				</div>
+                        
+				<div id="main_subtitle" style="margin-top:10px;">
+                    Annual Sports Fest of MNIT, Jaipur <span id="bar">|</span><span id="br"></span> 23rd - 25th FEB
+				</div>
+				
+				<div id="headerr">
+			<span id="logo">
+                <a href="http://www.mstmnit.com" target="_blank"><img src="/static/img/thank.png" id="thank_logo"></a>
+        </span>
+		</div>  
+
+                     <div id="main_motto">
+						<span style="color:#fff;"><span style="color:41bb17;">You have successfully registered. </span><br>Please check your email for further instructions or visit our website.</span><br>
+                       
+				</div>
+				 <div id="front_btn"><a href="/"><button type="button" id="proceed_btn">Home</button></a></div>
+				
+			</center>
+		</div>
+	</div>
+            
+	 </div>	
+	
+	
+
+
+
+<div id="bottom_bar">
+For any queries, Contact Us:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="br"></span>  Bharath: +91-8696434767 &nbsp;&nbsp;&nbsp;Juhi: +91-9649006486
+</div>
+</div>
+</body>
+
+
+
+</html>

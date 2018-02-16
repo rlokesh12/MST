@@ -1,0 +1,1342 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>MST | 18</title>
+<meta name="description" content="">  
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+<link rel="icon" type="image/png" href="/static/img/favicon.png">
+<link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+<style>
+
+		
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-image:url(/static/img/modal_back.jpg);
+    background-repeat: :no-repeat;
+    
+}
+
+.modal-content {
+    position: relative;
+    
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 45%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    display:none;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background:rgba(255,255,255,0.5);
+    color: #000;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+
+.modal-body {padding: 20px 16px;
+	height:200px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.modal-footer {
+    padding: 20px 16px;
+ background:rgba(255,255,255,0.5);
+    color: #000;
+	font-family:Arial, Helvetica, sans-serif;
+}
+</style>
+<style>
+.card {
+  box-shadow: 0 11px 8px 0 rgba(0, 0, 0, 0.9);
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+display:inline-block;
+    margin: 20px;
+	background:rgba(65,187,23,0.3);
+	background:rgba(255,255,255,0.5);
+	padding-top:20px;
+}
+
+.title {
+	line-height:55px;
+  color: #000;
+font-weight:bold;
+  font-size: 18px;
+}
+
+.reg_btn {
+    transition-duration: 1s;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+.reg_btn:hover, a:hover {
+   
+  color:#41bb17;
+}
+
+#icons{
+	width:100px;
+	color:white;
+}
+
+#left_side{
+	float:left;
+	text-align:center;
+}
+
+#center_side{
+	float:left;
+	margin-left:40px;
+	text-align:center;
+}
+
+#right_side{
+	float:right;
+	text-align:center;
+}
+#title_2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+        font-size: 18px;
+}
+    #title_3{
+	font-family:Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 25px;
+}
+
+#mnit_logo{
+	
+	width:100px;
+	margin:20px;
+}
+#mst_logo{
+	width:210px;
+    margin-bottom: 20px
+
+}
+#main{
+ background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  width:100%;
+  height:100%;
+}
+.input-icon{
+margin-top:20px;
+}
+    #headerl{
+        position:fixed;
+        float:left;
+        
+    }
+    #headerr2{
+        position:absolute;
+        float:right;
+		right:0;
+		padding: 20px;
+		
+        
+    }
+#heading{
+	font-size:20px;
+	line-height:55px;
+	font-weight:bold;
+	color:#41bb17;
+    font-family:Arial, Helvetica, sans-serif;
+}
+select {
+
+  width: 100%;
+  }
+  
+ #proceed_btn{
+	background:transparent;
+	border:2px solid #41bb17;
+	padding:10px;
+	padding-left:20px;
+	padding-right:20px;
+	color:#fff;
+	border-radius: 4.2px;
+       transition-duration: 1s;
+ }
+ 
+ #proceed_btn:hover{
+	background-color:#41bb17;
+ }
+  #proceed2_btn{
+	background:transparent;
+	border:2px solid #41bb17;
+	padding:10px;
+	padding-left:20px;
+	padding-right:20px;
+	color:#fff;
+	border-radius: 4.2px;
+	font-size:23px;
+      transition-duration: 1s;
+ }
+ 
+ #proceed2_btn:hover{
+	background-color:#41bb17;
+ }
+ 
+ .container {
+    max-width: 38em;
+    padding: 1em 3em 2em 3em;
+    margin: 0em auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4.2px;
+    box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, 0.2);
+	border:2px solid #41bb17;
+	
+}
+
+  
+    
+#front_cen{
+	position:relative;
+	top:110;
+}
+#main_subtitle{
+	color:#fff;
+	font-size:25px;
+	padding-bottom:20px;
+}
+#main_title{
+	color:#fff;
+	font-size:50px;
+    text-align: :center;
+}
+#front_btn{
+padding-top:50px;
+}
+#top{
+	height:100%;
+	overflow: hidden;
+}
+#middle{
+transition-delay: 2s;
+background-image:url(/static/img/background2.jpg);
+background-repeat:no-repeat; 
+background-size:cover; 
+background-position:center; 
+background-attachment: fixed;
+}
+#middle_main{
+ background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width:100%;
+  padding-bottom:50px;
+  padding-top:50px;
+}
+#bottom{
+background-image:url(/static/img/background4.jpg);
+background-repeat:no-repeat; 
+background-size:cover; 
+background-position:center; 
+background-attachment: fixed;
+}
+#bottom_main{
+ background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  width:100%;
+  padding-bottom:50px;
+  padding-top:50px;
+}
+#side_option{
+padding:20px;
+background-color:#fff;
+width:60px;
+height:60px;
+border-radius: 0 25px 0 0; 
+margin-top:-50px;
+}
+
+#footer{
+ background-color: rgba(0, 0, 0, 0.5);
+}
+
+#final_box{
+        margin-top: 50px;
+padding-top:50px;
+width:300px;
+height:150px;
+ background-color: rgba(0, 0,0, 0.5);
+ border-radius:25px;
+
+}
+#main_motto{
+margin-top:-20px;
+    font-size: :20px;
+}
+    #ico .check_box{
+        display:none;
+        
+    }
+    
+   input[type="checkbox"]{
+    width: auto; 
+    }
+    
+       #br{
+           display:none;
+           
+       }
+    #rules_link a{
+		text-decoration:none;
+		color:white;
+		font-size:15px;
+		}
+		
+		#rules_link a:hover{
+		text-decoration:none;
+		color:#41bb17;
+
+		}
+	#bottom_bar{
+		background-color:#000;
+		    margin-top: -18px;
+			height:50px;
+	}
+#bottom_bar{
+color:#fff;
+text-align:center;
+padding-top:10px;
+}	
+
+
+#middle_main input,input[type="radio"] + label{
+		background-color:#000;
+	  
+}
+#cog{
+background-color:#000;
+}
+   @media only screen and (max-width: 500px)  {
+    #front_btn {
+    padding-top: 0;
+    }
+        #mst_logo {
+    width: 74px;
+    
+}
+        #mnit_logo {
+    width: 43px;
+    
+}
+        #front_btn #proceed_btn {
+    margin-top: 60px;
+}
+       #main_subtitle {
+    padding-top: 50px;
+    font-size: 20px;
+    
+}
+       #main_title {
+    font-size: 35px;  
+}
+       .container {
+    
+    width: 95%;
+       
+    }
+    #main_motto {
+   
+    padding-top: 0px;
+    }
+        #headerl{
+        position:absolute;
+        float:left;
+        
+    }
+    #headerr{
+        
+        
+    }
+       #top {
+    
+           padding: 20px;}
+       #bar{
+           display:none;
+           
+       }
+       #br{
+           display:block;
+           
+       }
+       .modal-body {
+    
+    height: 350px;
+    
+}
+       #left_side {
+    float: none;
+    
+}
+       #right_side {
+    float: none;
+           margin-top: 75px;
+    
+}
+
+ #center_side {
+    float: none;
+           margin-top: 75px;
+		   margin-left:0px;
+    
+}
+       .modal-content {
+   
+    width: 95%;
+    
+}
+
+#gym_modal .modal-body {
+    height: 430px;
+}
+       #mst_logo{
+	   width:135px;
+	   margin-bottom: 15px;
+	   }
+	   
+    }
+	#gym_modal .modal-content{
+		width:50%;
+	   }
+	   
+	  select:disabled{
+		background-color:#000;
+	  }
+    
+</style>
+</head>
+
+<body style="background:rgba(0,0,0,0.999); background-image:url(/static/img/background3.jpg); background-repeat:no-repeat; background-size:cover; background-position:center; background-attachment: fixed;   ">
+	<div id="main">
+    <div id="headerl">
+			<div id="logo">
+                <a href="http://www.mnit.ac.in" target="_blank" ><img src="/static/img/mnit_logo.jpg" id="mnit_logo"></a>
+       </div>
+	    	</div>  
+			
+			<div id="headerr2">
+	<a href="https://www.facebook.com/mst.mnit/" target="_blank"><i class="fa fa-facebook" style="font-size:20px; color:#fff; "></i></a>&nbsp;&nbsp;			   
+				  <a href="https://www.instagram.com/mst.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; color:#fff;"></i></a>
+		</div> 
+         
+			
+        
+	<div id="top">
+       
+		
+	
+	
+		<div id="front_cen">
+            
+			<center>
+				
+				<div id="main_title">
+                    <center>
+                        <span style="text-align :center;"><span style="color:#41bb17;">M</span>alaviya <span style="color:#41bb17;">S</span>ports <span style="color:#41bb17;">T</span>ournament <span style="color:#41bb17;">'18</span</span>
+                        </center>
+				</div>
+                        
+				<div id="main_subtitle" style="margin-top:10px;">
+                    Annual Sports Fest of MNIT, Jaipur <span id="bar">|</span><span id="br"></span> 23rd - 25th FEB
+				</div>
+				
+				<div id="headerr">
+			<span id="logo">
+                <a href="http://www.mstmnit.com" target="_blank"><img src="/static/img/mst_logo.PNG" id="mst_logo"></a>
+        </span>
+		</div>  
+
+                     <div id="main_motto">
+                         <span style="font-size:25px; color:#fff;">"One Team, One Dream"</span>
+				</div>
+				 <div id="front_btn"><a href="#middle"><button type="button" id="proceed_btn">Register Now</button></a></div>
+				
+			</center>
+		</div>
+	</div>
+	  <form method="post">
+          {% csrf_token %}
+	<div id="middle">	
+	<div id="middle_main">
+<div class="container">
+
+    <div class="row">
+      <center><span id="heading">Basic <span style="color:#fff;">Information</span></span></center>
+      <div class="input-group input-group-icon">
+        <input type="text" name="name" placeholder="Full Name" pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$" required>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+        <div class="input-group">
+          <input type="radio" name="gender" value="male" id="gender-male" required>
+          <label for="gender-male">Male</label>
+          <input type="radio" name="gender" value="female" id="gender-female" required>
+          <label for="gender-female">Female</label>
+        </div>
+      <div class="input-group input-group-icon">
+        <input type="email" name="email" placeholder="Email Address" required>
+        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+	  <div class="input-group input-group-icon">
+        <input type="text" name="contact" placeholder="Contact Number" pattern="0?[0-9]{10}" required>
+        <div class="input-icon"><i class="fa fa-phone"></i></div>
+      </div>
+	  <div class="input-group input-group-icon">
+        <input type="text" name="college" placeholder="College" required>
+        <div class="input-icon"><i class="fa fa-university"></i></div>
+      </div>
+	  <div class="input-group input-group-icon">
+        <input type="text" name="city" placeholder="City" pattern="[a-zA-Z][a-zA-Z ]+[a-zA-Z]$" required>
+        <div class="input-icon"><i class="fa fa-location-arrow"></i></div>
+      </div>
+	    <div class="input-group">
+          <select name="designation" id="cog" required>
+            <option disabled>Designation</option>
+			<option value="off">Sports Official</option>
+			<option value="coo">Student Sports Coordinator</option>
+			<option value="pla">Institute Player</option>
+          </select>
+        </div>
+    </div>
+	<br>
+    <div class="row">
+      <div class="input-group">
+        <input type="checkbox" style="display:none;" id="terms" required>
+        <label for="terms"><span style="color:#fff;" id="rules_link">I accept the <u><a href="/static/Download/Rules_and_Regulations.pdf" target="_blank">Rules and Regulations</a></u> for participating in this Tournament.</span></label>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="input-group">
+       <center><a href="#bottom"><button id="proceed_btn" type="button">Proceed</button></a></center>
+      </div>
+    </div>
+
+</div>
+</div>
+</div>
+	
+<div id="bottom">	
+	<div id="bottom_main">			
+			
+<center>
+<div style="width:80%;" id="ico">
+	<div class="card">
+		<img src="/static/img/icons/bad.svg" alt="Badminton" id="icons"><br>
+		<span class="title">Badminton</span><br>
+		<div class="row" id="side_option">
+			<div class="input-group">
+				<input type="checkbox" name="bad_check" value="1" id="bad_check" class="check_box" onclick="activator(event,'bad_check','bad_modal','bad_male_no','bad_female_no','bad_male_check','bad_female_check')">
+				<label for="bad_check"></label>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="card">
+	<img src="/static/img/icons/bas.svg" alt="Basket Ball" id="icons"><br>
+	<span class="title">Basket Ball</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="bas_check" name="bas_check" value="1" class="check_box" onclick="activator(event,'bas_check','bas_modal','bas_male_no','bas_female_no','bas_male_check','bas_female_check')">
+	<label for="bas_check"></label>
+			</div>
+		</div>
+		</div>
+	
+	<div class="card">
+	<img src="/static/img/icons/che.svg" alt="Chess" id="icons"><br>
+	<span class="title">Chess</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="che_check" name="che_check" value="1" class="check_box" onclick="activator(event,'che_check','che_modal','che_male_no','che_female_no','che_male_check','che_female_check')">
+<label for="che_check"></label>
+			</div>
+		</div>
+	</div>
+
+	<div class="card">
+		<img src="/static/img/icons/cri.svg" alt="Cricket" id="icons"><br>
+		<span class="title">Cricket</span><br>
+		<div class="row" id="side_option">
+			<div class="input-group">
+		<input type="checkbox" id="cri_check" name="cri_check" value="1" class="check_box" onclick="activator(event,'cri_check','cri_modal','cri_male_no','cri_female_no','cri_male_check','cri_female_check')">
+	<label for="cri_check"></label>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card">
+	<img src="/static/img/icons/foo.svg" alt="Foot Ball" id="icons"><br>
+	<span class="title">Foot Ball</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="foo_check" name="foo_check" value="1" class="check_box" onclick="activator(event,'foo_check','foo_modal','foo_male_no','foo_female_no','foo_male_check','foo_female_check')">
+<label for="foo_check"></label>
+			</div>
+		</div>
+	</div>
+
+<div class="card">
+	<img src="/static/img/icons/gym.svg" alt="Gym" id="icons"><br>
+	<span class="title">Gym</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="gym_check" name="gym_check" value="1" class="check_box" onclick="activator_gym(event,'gym_check','gym_modal','gym_wei_no','gym_pow_no','gym_bes_no','gym_wei_check','gym_pow_check','gym_bes_check')">
+<label for="gym_check"></label>
+			</div>
+		</div>
+	</div>
+
+<div class="card">
+	<img src="/static/img/icons/kab.svg" alt="Kabaddi" id="icons"><br>
+	<span class="title">Kabaddi</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="kab_check" name="kab_check" value="1" class="check_box" onclick="activator(event,'kab_check','kab_modal','kab_male_no','kab_female_no','kab_male_check','kab_female_check')">
+<label for="kab_check"></label>
+			</div>
+		</div>
+	</div>
+	
+	<div class="card">
+	<img src="/static/img/icons/tab.svg" alt="tabminton" id="icons"><br>
+	<span class="title">Table Tennis</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="tab_check" name="tab_check" value="1" class="check_box" onclick="activator(event,'tab_check','tab_modal','tab_male_no','tab_female_no','tab_male_check','tab_female_check')">
+<label for="tab_check"></label>
+			</div>
+		</div>
+	</div>
+
+<div class="card">
+	<img src="/static/img/icons/ten.svg" alt="Tennis" id="icons"><br>
+	<span class="title">Tennis</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="ten_check" name="ten_check" value="1" class="check_box" onclick="activator(event,'ten_check','ten_modal','ten_male_no','ten_female_no','ten_male_check','ten_female_check')">
+<label for="ten_check"></label>
+			</div>
+		</div>
+	</div>
+
+<div class="card">
+	<img src="/static/img/icons/vol.svg" alt="Volley Ball" id="icons"><br>
+	<span class="title">Volley Ball</span><br>
+	<div class="row" id="side_option">
+			<div class="input-group">
+	<input type="checkbox" id="vol_check" name="vol_check" value="1" class="check_box" onclick="activator(event,'vol_check','vol_modal','vol_male_no','vol_female_no','vol_male_check','vol_female_check')">
+<label for="vol_check"></label>
+			</div>
+		</div>
+	</div>
+</div>
+</center>
+
+
+
+
+<div id="bad_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>BADMINTON</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+        
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="bad_male_check" name="bad_male_check" value="1" class="check_box" onclick="activator_2(event,'bad_male_check','bad_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="bad_male_no" id="bad_male_no" disabled required>    
+				<option value="4">4</option>
+				<option value="5">5</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="bad_female_check"  name="bad_female_check" value="1"class="check_box" onclick="activator_3(event,'bad_female_check','bad_female_no','1')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="bad_female_no" id="bad_female_no" disabled required >
+    		<!--
+			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    		-->
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="bad_cancel" class="reg_btn" onclick="cancellation(event,'bad_check','bad_modal','bad_male_no','bad_female_no','bad_male_check','bad_female_check')">Cancel</button> <button type="button" id="bad_done" class="reg_btn" onclick="submission(event,'bad_check','bad_modal','bad_male_no','bad_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="cri_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Cricket</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="cri_male_check" name="cri_male_check" value="1" class="check_box" onclick="activator_2(event,'cri_male_check','cri_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="cri_male_no" id="cri_male_no" disabled required >
+       			<option value="12">12</option>
+    			<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="cri_female_check" name="cri_female_check" value="1" class="check_box" onclick="activator_3(event,'cri_female_check','cri_female_no','0')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="cri_female_no" id="cri_female_no" disabled required >
+    			<option value="1">N/A</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="cri_cancel" class="reg_btn" onclick="cancellation(event,'cri_check','cri_modal','cri_male_no','cri_female_no','cri_male_check','cri_female_check')">Cancel</button> <button type="button" id="cri_done" class="reg_btn" onclick="submission(event,'cri_check','cri_modal','cri_male_no','cri_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="tab_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Table Tennis</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="tab_male_check" name="tab_male_check" value="1" class="check_box" onclick="activator_2(event,'tab_male_check','tab_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="tab_male_no" id="tab_male_no" disabled required >
+    		<!--	<option value="1">1</option>
+    			<option value="2">2</option>
+    		-->
+			<option value="3">3</option>
+   			<option value="4">4</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="tab_female_check" name="tab_female_check" value="1" class="check_box" onclick="activator_3(event,'tab_female_check','tab_female_no','1')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="tab_female_no" id="tab_female_no" disabled required >
+    		<!--	<option value="1">1</option>
+    			<option value="2">2</option>
+    		-->
+			<option value="3">3</option>
+    			<option value="4">4</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="tab_cancel" class="reg_btn" onclick="cancellation(event,'tab_check','tab_modal','tab_male_no','tab_female_no','tab_male_check','tab_female_check')">Cancel</button> <button type="button" id="tab_done" class="reg_btn" onclick="submission(event,'tab_check','tab_modal','tab_male_no','tab_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="vol_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Volley Ball</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="vol_male_check" name="vol_male_check" value="1" class="check_box" onclick="activator_2(event,'vol_male_check','vol_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="vol_male_no" id="vol_male_no" disabled required >
+		<!--		<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+		-->
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="vol_female_check" name="vol_female_check" value="1" class="check_box" onclick="activator_3(event,'vol_female_check','vol_female_no','1')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="vol_female_no" id="vol_female_no" disabled required >
+	 <!--   			<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+	-->
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="vol_cancel" class="reg_btn" onclick="cancellation(event,'vol_check','vol_modal','vol_male_no','vol_female_no','vol_male_check','vol_female_check')">Cancel</button> <button type="button" id="vol_done" class="reg_btn" onclick="submission(event,'vol_check','vol_modal','vol_male_no','vol_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="bas_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Basket Ball</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="bas_male_check" name="bas_male_check" value="1" class="check_box" onclick="activator_2(event,'bas_male_check','bas_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="bas_male_no" id="bas_male_no" disabled required >
+<!--
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+-->
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="bas_female_check" name="bas_female_check" value="1" class="check_box" onclick="activator_3(event,'bas_female_check','bas_female_no','1')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="bas_female_no" id="bas_female_no" disabled required >
+<!--    				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+-->
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="bas_cancel" class="reg_btn" onclick="cancellation(event,'bas_check','bas_modal','bas_male_no','bas_female_no','bas_male_check','bas_female_check')">Cancel</button> <button type="button" id="bas_done" class="reg_btn" onclick="submission(event,'bas_check','bas_modal','bas_male_no','bas_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="foo_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Foot Ball</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="foo_male_check" name="foo_male_check" value="1" class="check_box" onclick="activator_2(event,'foo_male_check','foo_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="foo_male_no" id="foo_male_no" disabled required >
+<!--    	
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+-->
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="foo_female_check" name="foo_female_check" value="1" class="check_box" onclick="activator_3(event,'foo_female_check','foo_female_no','0')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="foo_female_no" id="foo_female_no" disabled required >
+    			<option value="1">N/A</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="foo_cancel" class="reg_btn" onclick="cancellation(event,'foo_check','foo_modal','foo_male_no','foo_female_no','foo_male_check','foo_female_check')">Cancel</button> <button type="button" id="foo_done" class="reg_btn" onclick="submission(event,'foo_check','foo_modal','foo_male_no','foo_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="ten_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Tennis</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="ten_male_check" name="ten_male_check" value="1" class="check_box" onclick="activator_2(event,'ten_male_check','ten_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="ten_male_no" id="ten_male_no" disabled required >
+<!--
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+-->   
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="ten_female_check" name="ten_female_check" value="1" class="check_box" onclick="activator_3(event,'ten_female_check','ten_female_no','1')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="ten_female_no" id="ten_female_no" disabled required >
+<!--    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+-->    
+			<option value="4">4</option>
+				<option value="5">5</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="ten_cancel" class="reg_btn" onclick="cancellation(event,'ten_check','ten_modal','ten_male_no','ten_female_no','ten_male_check','ten_female_check')">Cancel</button> <button type="button" id="ten_done" class="reg_btn" onclick="submission(event,'ten_check','ten_modal','ten_male_no','ten_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+
+<div id="che_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Chess</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="che_male_check" name="che_male_check" value="1" class="check_box" onclick="activator_2(event,'che_male_check','che_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="che_male_no" id="che_male_no" disabled required >
+<!--    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+-->   
+			<option value="4">4</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="che_female_check" name="che_female_check" value="1" class="check_box" onclick="activator_3(event,'che_female_check','che_female_no','1')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="che_female_no" id="che_female_no" disabled required >
+   <!-- 			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+-->    
+			<option value="4">4</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="che_cancel" class="reg_btn" onclick="cancellation(event,'che_check','che_modal','che_male_no','che_female_no','che_male_check','che_female_check')">Cancel</button> <button type="button" id="che_done" class="reg_btn" onclick="submission(event,'che_check','che_modal','che_male_no','che_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="kab_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Kabaddi</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+		<span id="title_2">Female Team</span>
+		<input type="checkbox" id="kab_male_check" name="kab_female_check" value="1" class="check_box" onclick="activator_2(event,'kab_male_check','kab_male_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="kab_male_no" id="kab_male_no" disabled required >
+<!--    			<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+-->
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+		</select>
+	</div>
+	<div id="right_side">
+		<span id="title_2">Male Team</span>
+		<input type="checkbox" id="kab_female_check" class="check_box" onclick="activator_3(event,'kab_female_check','kab_female_no','0')"><br><br>
+
+		<span id="title_3">Number of players: </span>
+		<select name="kab_female_no" id="kab_female_no" disabled required >
+    			<option value="1">N/A</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+    			<option value="4">4</option>
+		</select>
+    	</div>
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="kab_cancel" class="reg_btn" onclick="cancellation(event,'kab_check','kab_modal','kab_male_no','kab_female_no','kab_male_check','kab_female_check')">Cancel</button> <button type="button" id="kab_done" class="reg_btn" onclick="submission(event,'kab_check','kab_modal','kab_male_no','kab_female_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+<div id="gym_modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Gym</h2>
+    </div>
+    <div class="modal-body">
+	<div id="left_side">
+        
+		<span id="title_2">Weight Lifting</span>
+		<input type="checkbox" id="gym_wei_check" name="gym_wei_check" value="1" class="check_box" onclick="activator_2(event,'gym_wei_check','gym_wei_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="gym_wei_no" id="gym_wei_no" disabled required >
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+   			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+				<option value="8">8</option>
+			
+		</select>
+	</div>
+	<div id="center_side">
+        
+		<span id="title_2">Power Lifting</span>
+		<input type="checkbox" id="gym_pow_check" name="gym_pow_check" value="1" class="check_box" onclick="activator_2(event,'gym_pow_check','gym_pow_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="gym_pow_no" id="gym_pow_no" disabled required >
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+   			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+				<option value="8">8</option>
+		</select>
+	</div>
+	<div id="right_side">
+        
+		<span id="title_2">Best Physique</span>
+		<input type="checkbox" id="gym_bes_check" name="gym_bes_check" value="1" class="check_box" onclick="activator_2(event,'gym_bes_check','gym_bes_no')"><br><br>
+	
+		<span id="title_3">Number of players: </span>
+     		<select name="gym_bes_no" id="gym_bes_no" disabled required >
+    			<option value="1">1</option>
+    			<option value="2">2</option>
+    			<option value="3">3</option>
+   			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+				<option value="8">8</option>
+		</select>
+	</div>
+	
+</div>
+    <div class="modal-footer">
+      <center><button type="button" id="gym_cancel" class="reg_btn" onclick="cancellation_gym(event,'gym_check','gym_modal','gym_wei_no','gym_pow_no','gym_bes_no','gym_wei_check','gym_pow_check','gym_bes_check')">Cancel</button> <button type="button" id="gym_done" class="reg_btn" onclick="submission_gym(event,'gym_check','gym_modal','gym_wei_no','gym_pow_no','gym_bes_no')">Done</button></center>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<center><div id="final_box"><button type="submit" class="submit" id="proceed2_btn">Submit</button></div></center>
+  </form>
+</div>
+</div>
+
+
+<div id="bottom_bar">
+For any queries, Contact Us:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Bharath: +91-8696434767 &nbsp;&nbsp;&nbsp;Juhi: +91-9649006486
+</div>
+</div>
+</body>
+ <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script>
+function activator(evt,check,modal,male,female,male_check,female_check) {
+	if(document.getElementById(check).checked == true){
+		var mod = document.getElementById(modal);
+		if(mod.style.display == ""){
+			mod.style.display = "block"
+		}	
+	}
+	else{
+		document.getElementById(male).disabled = true;
+		document.getElementById(female).disabled = true;
+		document.getElementById(male_check).checked = false;
+		document.getElementById(female_check).checked = false;	
+	}
+}
+
+function activator_gym(evt,check,modal,male1,male2,female,male_check,male2_check,female_check) {
+	if(document.getElementById(check).checked == true){
+		var mod = document.getElementById(modal);
+		if(mod.style.display == ""){
+			mod.style.display = "block"
+		}	
+	}
+	else{
+		document.getElementById(male).disabled = true;
+		document.getElementById(male2).disabled = true;
+		document.getElementById(female).disabled = true;
+		document.getElementById(male_check).checked = false;
+		document.getElementById(male2_check).checked = false;
+		document.getElementById(female_check).checked = false;	
+	}
+}
+
+function activator_2(evt,check,male) {
+	if(document.getElementById(check).checked == true){
+			document.getElementById(male).disabled = false;
+	}
+	else{
+		document.getElementById(male).disabled = true;
+	}
+}
+
+function activator_3(evt,check,female,stat) {
+	if(stat == 1){
+		if(document.getElementById(check).checked == true){
+			document.getElementById(female).disabled = false;
+		}
+		else{
+			document.getElementById(female).disabled = true;
+		}
+	}
+}
+
+
+function cancellation(evt,check,modal,male,female,male_check,female_check) {
+	document.getElementById(male).disabled = true;
+	document.getElementById(female).disabled = true;
+	document.getElementById(male_check).checked = false;
+	document.getElementById(female_check).checked = false;
+	document.getElementById(check).checked = false;
+	var mod = document.getElementById(modal);
+	mod.style.display = "";
+		
+}
+
+function submission(evt,check,modal,male,female) {
+	if(document.getElementById(male).disabled == false || document.getElementById(female).disabled == false){
+		var mod = document.getElementById(modal);
+		mod.style.display = "";
+	}
+	else{
+		document.getElementById(check).checked = false;	
+		var mod = document.getElementById(modal);
+		mod.style.display = "";
+	}
+	
+		
+}
+
+function cancellation_gym(evt,check,modal,male,male2,female,male_check,male2_check,female_check) {
+	document.getElementById(male).disabled = true;
+	document.getElementById(male2).disabled = true;
+	document.getElementById(female).disabled = true;
+	document.getElementById(male_check).checked = false;
+	document.getElementById(male2_check).checked = false;
+	document.getElementById(female_check).checked = false;
+	document.getElementById(check).checked = false;
+	var mod = document.getElementById(modal);
+	mod.style.display = "";
+		
+}
+
+function submission_gym(evt,check,modal,male,male2,female) {
+	if(document.getElementById(male).disabled == false || document.getElementById(male2).disabled == false || document.getElementById(female).disabled == false){
+		var mod = document.getElementById(modal);
+		mod.style.display = "";
+	}
+	else{
+		document.getElementById(check).checked = false;	
+		var mod = document.getElementById(modal);
+		mod.style.display = "";
+	}
+	
+		
+}
+</script>
+        <script>
+// Set the date we're counting down to
+var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+</html>
