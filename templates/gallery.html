@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>MST'18 | Gallery</title>
+		<link rel="icon" type="image/png" href="/static/images/favicon.png">
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"><!-- Core Meta Data -->
+		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    
+        <!-- CSS -->
+        <link href="/static/files/css" rel="stylesheet" type="text/css"><!-- Styles -->
+        <link href="/static/files/loader.css" rel="stylesheet" type="text/css">
+        <link href="/static/files/normalize.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="/static/files/font-awesome.min.css">
+        <link href="/static/files/style.css" rel="stylesheet" type="text/css">
+ 
+        <!-- Javascript -->
+        <script src="/static/files/jquery.js.download"></script>
+		 <style>
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #fff; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #fff; 
+}
+
+
+
+
+
+.mySlides {display: none}
+
+
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: static;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+
+@keyframes fade {
+  
+   from { opacity: 0;}
+  to{ opacity: 1;}
+}
+
+
+
+
+
+
+@font-face {
+    font-family: berk;
+    src: url(/static/font/berk.woff);
+}
+body{
+	font-family:berk;
+	color:#fff;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+      z-index: 9999;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+	 overflow-y: hidden;
+}
+
+.sidenav a {
+    padding: 4px 4px 4px 27px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top:15px;
+    right: 25px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+.mnit_logo{
+	width:100px;
+	padding:25px;
+}
+.mst_logo_div{
+	position:fixed;
+	top:130px;
+	width:100%;
+	text-align:center;
+	padding:25px;
+}
+.mst_logo{
+	width:220px;
+}
+.title_heading{
+	position:absolute;
+	text-align:center;
+	width:100%;
+	top:50px;
+	color:#fff;
+	font-size:50px;
+	font-weight:bold;
+	line-height:20px;
+}
+.title_sub_heading{
+	position:absolute;
+	text-align:center;
+	width:100%;
+	top:100px;
+	color:#fff;
+	font-size:25px;
+}
+.title_motto{
+	position:fixed;
+	text-align:center;
+	width:100%;
+	top:400px;
+	color:#fff;
+	font-size:35px;
+}
+.begin_div{
+	position:fixed;
+	text-align:center;
+	width:100%;
+	bottom:120px;
+}
+.begin{
+	border:2px solid #fff;
+	width:400px;
+	height:40px;
+	cursor:pointer;
+	font-size:30px;
+
+}
+.begin:hover{
+	color:#fff;
+	
+	text-decoration: line-through;
+}
+
+.social{
+	position:fixed;
+	bottom:25px;
+	left:25px;
+	    z-index: 9998;
+	
+}
+.social a{
+	color:#fff;
+	transition-duration:0.8s;
+}
+.social a:hover{
+	color:#fff;
+}
+.copyright{
+    z-index: 9999;
+	position:fixed;
+	right:25px;
+	bottom:25px;
+	}
+	.social a{
+	color:#fff;
+	transition-duration:0.8s;
+}
+.copyright a{
+	color:#fff;
+	transition-duration:0.8s;
+}
+.copyright a:hover{
+	color:#fff;
+}
+.sidenav_logo{
+	width:50px;
+	position:fixed;
+	top:25px;
+	left:25px;
+	
+}
+.sidenav_logo_text {
+    position: absolute;
+    margin-top: -20px;
+    left: 85px;
+    font-size: 25px;
+}
+
+.list {
+    text-align: center;
+    position: absolute;
+    left: 20%;
+    top: 242px;
+    color: #fff;
+}
+.list a{
+
+	color:#fff;
+    cursor: pointer;
+}
+.list a:hover{
+	color:#7A562E;
+	padding-left:20px;
+	 text-decoration: line-through;
+}
+.back3{
+    background: url(/static/images/gallery_back_main.jpg) no-repeat 50% 100%;
+    bottom: -20px;
+    background-size: cover;
+	
+    position: fixed;
+    width: 110%;
+    left: -5%;
+    top: -5%;
+
+}
+.page{
+	padding-top:50px;
+	font-size:40px;
+}
+
+
+
+.container-image {
+
+    position: absolute;
+    width:250px;
+	top:75px;
+}
+.one{
+right:430px;
+}
+.two{
+right:150px;
+}
+.three{
+right:0px;
+}
+.one3{
+right:610px;
+}
+.two3{
+right:330px;
+}
+.three3{
+right:50px;
+}
+.l{
+left:430px;
+}
+.l2{
+left:150px;
+}
+
+
+.l3{
+left:610px;
+}
+.l23{
+left:330px;
+}
+.l33{
+left:50px;
+}
+
+.image {
+  position: absolute;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+
+
+
+}
+
+.middle {
+
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  padding-top:100px;
+}
+
+.container-image:hover .image {
+  opacity: 0.3;
+  border-radius:50%;
+}
+
+.container-image:hover .middle {
+  opacity: 1;
+}
+.team_container{
+	position:absolute;
+	width:100%;
+	height:60%;
+}
+.container-image-title{
+	width:20%;
+	font-size:40px;
+	
+}
+.left{
+padding-top:180px;
+	padding-left:150px;
+}
+.right{
+text-align:right;
+padding-top:180px;
+right:0;
+	padding-right:150px;
+	position: absolute;
+}
+.name{
+width:100%;
+	font-family:arial;
+	margin-top:100px;
+	font-size:17px;
+	line-height:20px;
+}
+.container-image-title:hover{
+	text-decoration: line-through;
+}
+.first{
+    z-index: 100;
+top:100%;
+background: rgba(0,0,0,0.5);
+	
+}
+.second{
+    z-index: 100;
+top:160%;
+
+	
+}
+.third{
+    z-index: 100;
+top:220%;
+background: rgba(0,0,0,0.5);
+}
+.fourth{
+    z-index: 100;
+top:280%;
+
+}
+.fifth{
+    z-index: 100;
+top:340%;
+background: rgba(0,0,0,0.5);
+}
+.sixth{
+    z-index: 100;
+top:400%;
+
+}
+.seventh{
+    z-index: 100;
+top:460%;
+background: rgba(0,0,0,0.5);
+}
+.eighth{
+    z-index: 100;
+top:520%;
+
+}
+.nineth{
+    z-index: 100;
+top:580%;
+background: rgba(0,0,0,0.5);
+}
+.tenth{
+    z-index: 100;
+top:640%;
+
+}
+.eleventh{
+    z-index: 100;
+	background: rgba(0,0,0,0.5);
+top:700%;
+
+}
+.twelfth{
+    z-index: 100;
+top:760%;
+
+}
+.thirteenth{
+    z-index: 100;
+		background: rgba(0,0,0,0.5);
+top:820%;
+
+}
+.fourteenth{
+    z-index: 100;
+top:880%;
+
+}
+.quote{
+text-align:left;
+padding-top:220px;
+padding-left:100px;
+padding-right:100px;
+	font-size:40px;
+}
+#highlight{
+font-weight:bold;
+font-size:65px;
+}
+.pre_image{
+	position:absolute;
+	width:100%;
+}
+.pre_img{
+	position:absolute;
+	width:15%;
+}
+.writer{
+	font-size: 30px;
+}
+.nav_btn{
+display:block;
+}
+.nav_btnm{
+display:none;
+}
+.container{
+	position:absolute;
+	top:250px;
+	width:100%;
+	margin-bottom:100px;
+}
+.socialm{
+display:none;
+padding-bottom:10px;
+    margin-top: 25px;
+}
+.copyrightm{
+   display:none;
+}
+
+.socialm a{
+color:#fff;
+
+	text-decoration:none;
+}
+.copyrightm a{
+color:#fff;
+   text-decoration:none;
+}
+.gal_img{
+	width:650px;
+}
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  width: auto;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+@media only screen and (max-width: 700px) {
+.sidenav a {
+    padding-left:50px;
+
+}
+
+.title_heading {
+    top: 100px;
+    font-size: 5vw;
+}
+.quote {
+    text-align: left;
+    padding-top: 164px;
+    padding-left: 22px;
+    padding-right: 22px;
+    font-size: 5vw;
+}
+.writer{
+	font-size: 15px;
+}
+
+.title_sub_heading {
+ 
+    top: 122px;
+
+}
+.nav_btn{
+display:none;
+}
+.nav_btnm{
+display:block;
+}
+.row {
+    width: 100%;
+    margin-top: 210px;
+}
+.gal_img {
+    width: 95%;
+}
+.prev, .next {
+    top: 17%;
+}
+.copyright{
+	display:none;
+}
+.social{
+	display:none;
+}
+.container {
+margin-bottom: 10px;
+}
+.socialm{
+ display:block;
+    margin-top: 25px;
+}
+.copyrightm{
+    font-size: 11px;
+	margin-bottom: 15px;
+   display:block;
+}
+
+}
+</style>
+<style>
+
+.mySlides {
+  display: none;
+  margin-bottom:100px;
+ 
+}
+.cursor {
+  cursor: pointer;
+}
+
+
+
+
+.next {
+  right:25px;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: 25px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(255, 255, 255, 1.0);
+  color:#000;
+}
+.column {
+    display:inline-block;
+	 width: 319px;
+    padding: 12px;
+}
+
+.column:hover{
+	opacity:0.5;
+}
+
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.row{
+	width:100%;
+
+
+}
+.mySlides{
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes example {
+    from {opacity:0.5;}
+    to {opacity:1;}
+}
+
+
+</style>
+<style>
+
+
+
+.sticky {
+  position: fixed;
+  top: 100px;
+  width: 100%
+}
+.sticky + .row {
+  padding-top: 470px;
+}
+</style>
+    </head>
+    <body style="background:url(/static/images/gallery_back.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:cover;">
+	
+        <div class="preloader" style="display: none;">
+            <div class="loading">
+			<div class="pre_image">
+			<center><img src="/static/images/mst_logo.PNG" class="pre_img"></center>
+			</div>
+                
+                <span class="progress"></span>
+            </div>
+        </div>
+		<div id="mySidenav" class="sidenav">
+		<div class="sidenav_logo"><img src="/static/images/mst_logo.PNG"> </div><div class="sidenav_logo_text">| MST '18</div>
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px; cursor: pointer">&times;</a>
+		  <img src="/static/images/sword.png" style="margin-top:0px; padding:20px;">
+		  
+		  <div class="list">
+			  <a href="/">Home</a>
+			  <a href="/about">About</a>
+{#			  <a onclick="closeNav()">Gallery</a>#}
+			  <a href="/informals">Informals</a>
+			   <a href="/register">Register</a>
+			   <a href="/schedule">Schedule</a>
+			  <a href="/team">Team</a>
+		  </div>
+		  <img src="/static/images/sword.png" style="margin-top:200px; padding:20px;">
+		  
+		</div>
+		
+		<div class="slideshow-container">
+		<!-- TEAM -->
+		  <div class="mySlidess fade">
+        <div class="wrapper">
+            <ul class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" id="scene2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
+                <li class="layer" data-depth="0.00" style="position: relative; display: block; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
+                </li>
+                <li class="layer" data-depth="0.10" style="position: fixed; display: block; left: 0px; top: 0px; transform: translate3d(23.5117px, -3.30235px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
+                    <div class="background back3">
+					<div style="position:fixed; z-index:9999999; background:rgba(0,0,0,0.3); width:100%; height:100%;">
+</div>
+                    </div>
+                </li>
+
+               
+            </ul>
+        </div>
+		
+		
+			
+		<div class="nav_btn" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:999998;" onclick="openNav()">&#9776;</div>
+		<div class="nav_btnm" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index: 09998;" onclick="openNavm()">&#9776;</div>
+		<div style="position:fixed;     z-index: 9999999;"><a href="/"><img src="/static/images/mst_logo.PNG" class="mnit_logo"></a></div>
+		<div class="title_heading">
+			Malaviya Sports Tournament '18
+		</div>
+		<div class="title_sub_heading page">
+			Gallery
+			<hr style="width:40%;" color="#fff" noshade>
+		</div>
+		
+		
+		
+		
+		
+<center>
+	<div class="container" >
+        {% for i in num %}
+  <div class="mySlides" >
+    <img src="/static/gallery/{{ i }}.jpg" style="height: 350px" class="gal_img">
+  </div>
+        {% endfor %}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/2.JPG" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/3.JPG" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/4.JPG" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/5.JPG" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/6.JPG" class="gal_img">#}
+{#  </div>#}
+
+  <div class="row">
+  <center>
+      {% for i in num %}
+    <div class="column">
+      <img class="demo cursor" src="/static/gallery/{{ i }}.jpg" style="width:100% ; height: 300px" onclick="currentSlide({{ i }})" alt="The Woods">
+    </div>
+      {% endfor %}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/thumbnails/2.JPG" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/thumbnails/3.JPG" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/thumbnails/4.JPG" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/thumbnails/5.JPG" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">#}
+{#    </div>    #}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/thumbnails/6.JPG" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">#}
+{#    </div>#}
+	
+	<a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+  
+  <div class="socialm">
+			<a href="https://www.facebook.com/mst.mnit/" target="_blank"><i class="fa fa-facebook" style="font-size:20px;  "></i></a>&nbsp;&nbsp;			   
+			<a href="https://www.instagram.com/mst.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; "></i></a>
+		</div>
+		<div class="copyrightm">
+			Copyright © 2018 <a href="/" >MST</a>. All Rights Reserved
+		</div>
+ </center>
+ 
+ 
+  </center>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		<div class="social">
+			<a href="https://www.facebook.com/mst.mnit/" target="_blank"><i class="fa fa-facebook" style="font-size:20px;  "></i></a>&nbsp;&nbsp;			   
+			<a href="https://www.instagram.com/mst.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; "></i></a>
+		</div>
+		<div class="copyright">
+			Copyright © 2018 <a href="/">MST</a>. All Rights Reserved
+		</div>
+		</div>
+		  <!-- TEAM -->
+		  
+
+		  
+		  
+		  </div>
+        <!-- Javascript -->
+	<script>
+	
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+		<script>
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "350px";
+			}
+
+			function closeNav() {
+				document.getElementById("mySidenav").style.width = "0";
+			}
+			
+				function openNavm() {
+				document.getElementById("mySidenav").style.width = "100%";
+			}
+
+			function closeNavm() {
+				document.getElementById("mySidenav").style.width = "0";
+			}
+			
+
+			
+			
+		
+
+
+
+var counter=0;
+function start(counter){
+  if(counter < 10){
+    setTimeout(function(){
+      counter++;
+      plusSlides(1);
+      start(counter);
+    }, 2000);
+  }
+}
+start(0);
+		</script>
+
+		
+	
+		
+        <script src="/static/files/plugins.js.download"></script>
+        <script src="/static/files/jquery.countdown.min.js.download"></script>
+        <script src="/static/files/main.js.download"></script>
+	
+	</body>
+	</html>

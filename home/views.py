@@ -24,6 +24,27 @@ def fail_page(request):
     return render(request, 'fail.html', )
 
 def home_page(request):
+    return render(request, 'home.html')
+
+def about_page(request):
+    return render(request, 'about.html')
+
+def informals_page(request):
+    return render(request, 'informal.html')
+
+def schedule_page(request):
+    return render(request, 'schedule.html')
+
+# def gallery_page(request):
+#     nums = []
+#     for i in range(30):
+#         nums.append(i+1)
+#     return render(request, 'gallery.html', {'num' : nums})
+
+def team_page(request):
+    return render(request, 'team.html')
+
+def register_page(request):
     if request.method == 'GET':
         response = {
             'msg': 'Regiser Here',

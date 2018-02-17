@@ -19,7 +19,12 @@ v1_api.register(VolleyballResource())
 
 urlpatterns = [
     url(r'^$', home_page),
-    url(r'^register/$',home_page),
+    url(r'^register/$',register_page),
+    # url(r'^gallery/$',gallery_page),
+    url(r'^team/$',team_page),
+    url(r'^about/$',about_page),
+    url(r'^informals/$',informals_page),
+    url(r'^schedule/$',schedule_page),
     url(r'^thankyou/$', tq_page),
     url(r'^failure/$', fail_page),
     url(r'^api/', include(v1_api.urls)),
