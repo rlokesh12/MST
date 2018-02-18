@@ -44,6 +44,9 @@ def schedule_page(request):
 def team_page(request):
     return render(request, 'team.html')
 
+def social_page(request):
+    return render(request, 'social.html')
+
 def register_page(request):
     if request.method == 'GET':
         response = {

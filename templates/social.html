@@ -2,19 +2,21 @@
 <html lang="en-US">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>MST'18 | Schedule</title>
+        <title>MST'18 | Social Cause</title>
 		<link rel="icon" type="image/png" href="/static/images/favicon.png">
+        <meta content="yes" name="apple-mobile-web-app-capable">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"><!-- Core Meta Data -->
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-    
+
         <!-- CSS -->
         <link href="/static/files/css" rel="stylesheet" type="text/css"><!-- Styles -->
         <link href="/static/files/loader.css" rel="stylesheet" type="text/css">
         <link href="/static/files/normalize.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="./files/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/files/font-awesome.min.css">
         <link href="/static/files/style.css" rel="stylesheet" type="text/css">
- 
+
         <!-- Javascript -->
+
         <script src="/static/files/jquery.js.download"></script>
 		 <style>
 /* width */
@@ -99,6 +101,10 @@
 @font-face {
     font-family: berk;
     src: url(/static/font/berk.woff);
+}
+@font-face {
+    font-family: chase;
+    src: url(/static/font/chase.woff);
 }
 body{
 	font-family:berk;
@@ -249,7 +255,7 @@ body{
     text-align: center;
     position: absolute;
     left: 20%;
-    top: 242px;
+    top:242px;
     color: #fff;
 }
 .list a{
@@ -263,7 +269,7 @@ body{
 	 text-decoration: line-through;
 }
 .back3{
-    background: url(/static/images/comingsoon_back.jpg) no-repeat 50% 100%;
+    background: url(/static/images/background4.jpg) no-repeat 50% 100%;
     bottom: -20px;
     background-size: cover;
 	
@@ -279,6 +285,7 @@ body{
 }
 
 
+
 .quote{
 text-align:left;
 padding-top:220px;
@@ -291,12 +298,15 @@ font-weight:bold;
 font-size:65px;
 }
 .pre_image{
+	top:42%;
+	
 	position:absolute;
 	width:100%;
 }
 .pre_img{
-	position:absolute;
+		position:absolute;
 	width:15%;
+	filter: grayscale(100%);
 }
 .writer{
 	font-size: 30px;
@@ -307,47 +317,67 @@ display:block;
 .nav_btnm{
 display:none;
 }
-.container{
-	position:absolute;
-	top:250px;
-	width:100%;
-	margin-bottom:100px;
-}
-.paragraph{
-	position:absolute;
-	text-align:center;
-	width:100%;
-	top:200px;
-	color:#fff;
+.designation{
 	font-size:23px;
-	padding:50px;
+	font-family:chase;
+}
+.socialm{
+display:none;
+padding-bottom:10px;
+    margin-top: 25px;
+}
+.copyrightm{
+   display:none;
+}
+
+.socialm a{
+color:#fff;
+
+	text-decoration:none;
+}
+.copyrightm a{
+color:#fff;
+   text-decoration:none;
+}
+#onlymobile{
+	display:none;
+}
+
+.stitle{
+padding-top:70px;  text-align:center; font-size:40px;
+}
+.scotitle{
+ text-align:center; font-size:25px;
+}
+.spara{
+ text-align:center; padding:50px; padding-top:100px; font-size:25px;
+}
+.sinit{
+padding-top:20px;text-align:center; font-size:20px;
+}
+.sngo{
+width:150px;
+margin-top:-20px;
+}
+#foster{
+font-size:45px;
+}
+#little{
+font-size:30px;
+padding-top:20px;
 }
 @media only screen and (max-width: 700px) {
 .sidenav a {
     padding-left:50px;
 
 }
-.copyright {
-    z-index: 9998;
-    position: fixed;
-    right: 15%;
-    font-size: 12px;
-    bottom: 25px;
-}
-.social {
-    position: fixed;
-    bottom: 50px;
-    left: 43%;
-    z-index: 9998;
-}
-
 .title_heading {
     top: 100px;
     font-size: 5vw;
 }
 .quote {
     text-align: left;
-    padding-top: 164px;
+    padding-top:200px;
     padding-left: 22px;
     padding-right: 22px;
     font-size: 5vw;
@@ -358,7 +388,7 @@ display:none;
 
 .title_sub_heading {
  
-    top: 122px;
+    top: 90px;
 
 }
 .nav_btn{
@@ -367,32 +397,64 @@ display:none;
 .nav_btnm{
 display:block;
 }
-.row {
-    width: 100%;
-    margin-top: 210px;
+.copyright{
+	display:none;
 }
-.gal_img {
-    width: 95%;
-}
-.prev, .next {
-    top: 17%;
+.social{
+	display:none;
 }
 
-.container {
-margin-bottom: 10px;
+.socialm{
+ display:block;
+    margin-top: 25px;
+}
+.copyrightm{
+   display:block;
+}
+.list {
+
+    top: 242px;
+
+}
+
+.stitle{
+padding-top:30px;  text-align:center; font-size:25px;
+}
+.scotitle{
+ text-align:center; font-size:15px;
+}
+.spara{
+text-align:center; padding:20px; padding-top:50px;  font-size:15px;
+}
+.sinit{
+padding-top:40px; text-align:center; font-size:15px;
+}
+.sngo{
+width:80px;
+margin-top:-50px;
+}
+#foster{
+font-size:30px;
+}
+#little{
+font-size:20px;
+padding-top:20px;
 }
 
 
+
 }
+
+
+
+
 </style>
-
     </head>
     <body>
-	
-        
+      
 		<div id="mySidenav" class="sidenav">
-		<div class="sidenav_logo"><img src="/static/images/mst_logo.PNG"> </div><div class="sidenav_logo_text">| MST '18</div>
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px;cursor: pointer">&times;</a>
+		<div class="sidenav_logo"><a href="/"> <img src="/static/images/mst_logo.PNG"> </a></div><div class="sidenav_logo_text">| MST '18</div>
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px; cursor: pointer">&times;</a>
 		  <img src="/static/images/sword.png" style="margin-top:0px; padding:20px;">
 		  
 		  <div class="list">
@@ -401,8 +463,8 @@ margin-bottom: 10px;
 {#			  <a href="/gallery">Gallery</a>#}
 			  <a href="/informals">Informals</a>
 			   <a href="/register">Register</a>
-              <a href="/social">Social Cause</a>
-			   <a onclick="closeNav()">Schedule</a>
+			   <a onclick="closeNav()">Social Cause</a>
+			   <a href="/schedule">Schedule</a>
 			  <a href="/team">Team</a>
 		  </div>
 		  <img src="/static/images/sword.png" style="margin-top:200px; padding:20px;">
@@ -411,7 +473,7 @@ margin-bottom: 10px;
 		
 		<div class="slideshow-container">
 		<!-- TEAM -->
-		  <div class="mySlidess fade">
+		  <div class="mySlides fade">
         <div class="wrapper">
             <ul class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" id="scene2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
                 <li class="layer" data-depth="0.00" style="position: relative; display: block; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
@@ -429,39 +491,51 @@ margin-bottom: 10px;
 		
 		
 			
-		<div class="nav_btn" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:999998;" onclick="openNav()">&#9776;</div>
-		<div class="nav_btnm" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index: 09998;" onclick="openNavm()">&#9776;</div>
-		<div style="position:fixed;     z-index: 9999999;"><a href="/"><img src="/static/images/mst_logo.PNG" class="mnit_logo"></a></div>
+		<div class="nav_btn" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:99999;" onclick="openNav()">&#9776;</div>
+		<div class="nav_btnm" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:09998;" onclick="openNavm()">&#9776;</div>
+		<div style="position:fixed;     "><a href="/"><img src="/static/images/mst_logo.PNG" class="mnit_logo"></a></div>
 		<div class="title_heading">
 			Malaviya Sports Tournament '18
 		</div>
 		<div class="title_sub_heading page">
-			Schedule
+			Social Cause
 			<hr style="width:40%;" color="#fff" noshade>
 		</div>
-		<div class="paragraph">
-			Will be updated soon !!
+		<div class="title_sub_heading quote">
+			<div id="foster" style="text-align:center; ">FOSTER AN OFFSPRING<br> <div id="little" style="">Little feet,Big strides!</div></div>
 		</div>
 		
 		
 		
+		<div class="wrapper" style="letter-spacing: 3px; color:#fff; font-family:chase; position:absolute; top:100%; width:100%; height:100%; background-image:url(/static/images/s.jpg); background-size:cover;">
+		<div style="background:rgba(0,0,0,0.5); height:100%;">
+			<div class="stitle" style="">
+				What is it all about ?
+				<hr style="width:40%;" color="#fff" noshade>
+			</div>
+			<div class="scotitle" style="">
+				An initiative by MST, MNIT Jaipur
+			</div>
+			<div class="spara" style="">
+			MST is ecstatic for it's association with "NAYASAWERA",A youth based organisation.
+Upsurging NAYASAWERA is leading NGO organisation with 450 active working members.  
+MST'18 is swamping its drop in ocean by indulging offsprings to sports,cultural events to spark enthusiasm in embryonic brains.
+Your donations will bring stalk in offspring's life,Contribute us to support Nayasawera for a better tomorrow.
+			</div>
+			<div class="sinit" style="">
+				In association with
+				<hr style="width:40%;" color="#fff" noshade>
+			</div>
+			<div class="sinit" style="text-align:center;">
+				<a href="http://www.nayasawera.org" target="_blank"><img src="/static/images/ngo.png" class="sngo"></a>
+			</div>
+		</div></div>
 		
 		
-
-
-
-
-
-
-
-
-
-
-
-
 		
 		
 		
+
 		
 		
 		
@@ -470,7 +544,7 @@ margin-bottom: 10px;
 			<a href="https://www.instagram.com/mst.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; "></i></a>
 		</div>
 		<div class="copyright">
-			Copyright © 2018 <a href="/">MST</a>. All Rights Reserved
+			Copyright © 2018 <a href="http://www.mstmnit.com" target="_blank">MST</a>. All Rights Reserved
 		</div>
 		</div>
 		  <!-- TEAM -->
@@ -480,37 +554,34 @@ margin-bottom: 10px;
 		  
 		  </div>
         <!-- Javascript -->
-	<script>
-	
-var slideIndex = 1;
-showSlides(slideIndex);
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+		</script>
 		<script>
 			function openNav() {
 				document.getElementById("mySidenav").style.width = "350px";
@@ -527,33 +598,11 @@ function showSlides(n) {
 			function closeNavm() {
 				document.getElementById("mySidenav").style.width = "0";
 			}
-			
-			
-			
-			
-		
-
-
-
-var counter=0;
-function start(counter){
-  if(counter < 10){
-    setTimeout(function(){
-      counter++;
-      plusSlides(1);
-      start(counter);
-    }, 1000);
-  }
-}
-start(0);
 		</script>
-
-		
-	
 		
         <script src="/static/files/plugins.js.download"></script>
         <script src="/static/files/jquery.countdown.min.js.download"></script>
         <script src="/static/files/main.js.download"></script>
-	
+		
 	</body>
 	</html>
