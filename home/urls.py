@@ -23,6 +23,7 @@ urlpatterns = [
     # url(r'^gallery/$',gallery_page),
     url(r'^team/$',team_page),
     url(r'^social/$',social_page),
+    url(r'^donate/$',donate_page),
     url(r'^about/$',about_page),
     url(r'^informals/$',informals_page),
     url(r'^schedule/$',schedule_page),

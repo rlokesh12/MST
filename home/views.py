@@ -47,6 +47,9 @@ def team_page(request):
 def social_page(request):
     return render(request, 'social.html')
 
+def donate_page(request):
+    return render(request, 'qr.html')
+
 def register_page(request):
     if request.method == 'GET':
         response = {
