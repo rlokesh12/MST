@@ -35,11 +35,11 @@ def informals_page(request):
 def schedule_page(request):
     return render(request, 'schedule.html')
 
-# def gallery_page(request):
-#     nums = []
-#     for i in range(30):
-#         nums.append(i+1)
-#     return render(request, 'gallery.html', {'num' : nums})
+def gallery_page(request):
+    nums = []
+    for i in range(30):
+        nums.append(i+1)
+    return render(request, 'gallery.html', {'num' : nums})
 
 def team_page(request):
     return render(request, 'team.html')

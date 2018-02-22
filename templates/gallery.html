@@ -16,7 +16,7 @@
 
         <!-- Javascript -->
         <script src="/static/files/jquery.js.download"></script>
-		 <style>
+<style>
 /* width */
 ::-webkit-scrollbar {
     width: 5px;
@@ -514,12 +514,13 @@ color:#fff;
 }
 .gal_img{
 	width:650px;
+	height:400px;
 }
 .prev,
 .next {
   cursor: pointer;
   position: absolute;
-  top:150px;
+  top: 10%;
   width: auto;
   padding: 10px;
   color: white;
@@ -529,6 +530,27 @@ color:#fff;
   user-select: none;
   -webkit-user-select: none;
 }
+@media only screen and (max-width: 800px) {
+.title_heading {
+    top:100px;
+    font-size: 34px;
+}
+.prev, .next {
+    top: 275px;
+    font-size: 40px;
+}
+.container {
+    top: 375px;
+}
+.row {
+    margin-top: 300px;
+}
+
+}
+
+
+
+
 @media only screen and (max-width: 700px) {
 .sidenav a {
     padding-left:50px;
@@ -566,10 +588,11 @@ display:block;
     margin-top: 210px;
 }
 .gal_img {
-    width: 95%;
+    width: 92vw;
+    height: 63vw;
 }
 .prev, .next {
-    top:250px;
+    top: 275px;
 }
 .copyright{
 	display:none;
@@ -579,6 +602,7 @@ display:block;
 }
 .container {
 margin-bottom: 10px;
+top: 271px;
 }
 .socialm{
  display:block;
@@ -626,10 +650,6 @@ margin-bottom: 10px;
     padding: 12px;
 }
 
-.column img{
-    height: 190px;
-}
-
 .column:hover{
 	opacity:0.5;
 }
@@ -670,21 +690,22 @@ margin-bottom: 10px;
   padding-top: 470px;
 }
 </style>
+
     </head>
     <body style="background:url(/static/images/gallery_back.jpg); background-repeat:no-repeat; background-attachment:fixed; background-size:cover;">
 
         <div class="preloader" style="display: none;">
             <div class="loading">
 			<div class="pre_image">
-			<center><img src="/static/images/mst_logo.png" class="pre_img"></center>
+			<center><img src="/static/images/mst_logo.PNG" class="pre_img"></center>
 			</div>
 
                 <span class="progress"></span>
             </div>
         </div>
 		<div id="mySidenav" class="sidenav">
-		<div class="sidenav_logo"><img src="/static/images/mst_logo.png"> </div><div class="sidenav_logo_text">| MST '18</div>
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px;">&times;</a>
+		<div class="sidenav_logo"><img src="/static/images/mst_logo.PNG"> </div><div class="sidenav_logo_text">| MST '18</div>
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px; cursor: pointer">&times;</a>
 		  <img src="/static/images/sword.png" style="margin-top:0px; padding:20px;">
 
 		  <div class="list">
@@ -723,7 +744,7 @@ margin-bottom: 10px;
 
 		<div class="nav_btn" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:999998;" onclick="openNav()">&#9776;</div>
 		<div class="nav_btnm" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index: 09998;" onclick="openNavm()">&#9776;</div>
-		<div style="position:fixed;     z-index: 9999999;"><a target="_blank" href="http://www.mstmnit.com"><img src="/static/images/mst_logo.png" class="mnit_logo"></a></div>
+		<div style="position:fixed;     z-index: 9999999;"><a href="/"><img src="/static/images/mst_logo.PNG" class="mnit_logo"></a></div>
 		<div class="title_heading">
 			Malaviya Sports Tournament '18
 		</div>
@@ -738,92 +759,95 @@ margin-bottom: 10px;
 
 <center>
 	<div class="container" >
+        {% for i in num %}
   <div class="mySlides" >
-    <img src="/static/gallery/1.jpg" class="gal_img">
+    <img src="/static/gallery/{{ i }}.jpg" class="gal_img">
   </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/2.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/3.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/4.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/5.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/6.jpg" class="gal_img">
-  </div>
-
-   <div class="mySlides" >
-    <img src="/static/gallery/1.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/2.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/3.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/4.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/5.jpg" class="gal_img">
-  </div>
-
-  <div class="mySlides">
-    <img src="/static/gallery/6.jpg" class="gal_img">
-  </div>
+        {% endfor %}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/2.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/3.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/4.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/5.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/6.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#   <div class="mySlides" >#}
+{#    <img src="/static/gallery/1.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/2.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/3.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/4.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/5.jpg" class="gal_img">#}
+{#  </div>#}
+{##}
+{#  <div class="mySlides">#}
+{#    <img src="/static/gallery/6.jpg" class="gal_img">#}
+{#  </div>#}
 
   <div class="row">
   <center>
+      {% for i in num %}
     <div class="column">
-      <img class="demo cursor" src="/static/gallery/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <img class="demo cursor" src="/static/gallery/{{ i }}.jpg" style="width:100%; height: 190px" onclick="currentSlide({{ i }})" alt="The Woods">
     </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-    </div>
-	<div class="column">
-      <img class="demo cursor" src="/static/gallery/1.jpg" style="width:100%" onclick="currentSlide(7)" alt="The Woods">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/2.jpg" style="width:100%" onclick="currentSlide(8)" alt="Trolltunga, Norway">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/3.jpg" style="width:100%" onclick="currentSlide(9)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/4.jpg" style="width:100%" onclick="currentSlide(10)" alt="Northern Lights">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/5.jpg" style="width:100%" onclick="currentSlide(11)" alt="Nature and sunrise">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="/static/gallery/6.jpg" style="width:100%" onclick="currentSlide(12)" alt="Snowy Mountains">
-    </div>
+      {% endfor %}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">#}
+{#    </div>#}
+{#	<div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/1.jpg" style="width:100%" onclick="currentSlide(7)" alt="The Woods">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/2.jpg" style="width:100%" onclick="currentSlide(8)" alt="Trolltunga, Norway">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/3.jpg" style="width:100%" onclick="currentSlide(9)" alt="Mountains and fjords">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/4.jpg" style="width:100%" onclick="currentSlide(10)" alt="Northern Lights">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/5.jpg" style="width:100%" onclick="currentSlide(11)" alt="Nature and sunrise">#}
+{#    </div>#}
+{#    <div class="column">#}
+{#      <img class="demo cursor" src="/static/gallery/6.jpg" style="width:100%" onclick="currentSlide(12)" alt="Snowy Mountains">#}
+{#    </div>#}
 
 	<a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
@@ -833,7 +857,7 @@ margin-bottom: 10px;
 			<a href="https://www.instagram.com/mst.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; "></i></a>
 		</div>
 		<div class="copyrightm">
-			Copyright © 2018 <a href="http://www.mstmnit.com" target="_blank">MST</a>. All Rights Reserved
+			Copyright © 2018 <a href="/">MST</a>. All Rights Reserved
 		</div>
  </center>
 
@@ -863,7 +887,7 @@ margin-bottom: 10px;
 			<a href="https://www.instagram.com/mst.mnit/" target="_blank"><i class="fa fa-instagram" style="font-size:20px; "></i></a>
 		</div>
 		<div class="copyright">
-			Copyright © 2018 <a href="http://www.mstmnit.com" target="_blank">MST</a>. All Rights Reserved
+			Copyright © 2018 <a href="/" target="_blank">MST</a>. All Rights Reserved
 		</div>
 		</div>
 		  <!-- TEAM -->
