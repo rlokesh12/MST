@@ -3,19 +3,42 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>MST'18 | Schedule</title>
-		<link rel="icon" type="image/png" href="/static/images/favicon.png">
+		<link rel="icon" type="image/png" href="../images/favicon.png">
+        <meta content="yes" name="apple-mobile-web-app-capable">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"><!-- Core Meta Data -->
 		<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- CSS -->
         <link href="/static/files/css" rel="stylesheet" type="text/css"><!-- Styles -->
         <link href="/static/files/loader.css" rel="stylesheet" type="text/css">
         <link href="/static/files/normalize.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="./files/font-awesome.min.css">
+        <link rel="stylesheet" href="/static/files/font-awesome.min.css">
         <link href="/static/files/style.css" rel="stylesheet" type="text/css">
- 
+<script src="/static/files/jquery.js.download"></script>
         <!-- Javascript -->
-        <script src="/static/files/jquery.js.download"></script>
+<script>
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 1000, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+        
 		 <style>
 /* width */
 ::-webkit-scrollbar {
@@ -99,6 +122,10 @@
 @font-face {
     font-family: berk;
     src: url(/static/font/berk.woff);
+}
+@font-face {
+    font-family: chase;
+    src: url(/static/font/chase.woff);
 }
 body{
 	font-family:berk;
@@ -249,7 +276,7 @@ body{
     text-align: center;
     position: absolute;
     left: 20%;
-    top: 242px;
+    top:216px;
     color: #fff;
 }
 .list a{
@@ -263,20 +290,19 @@ body{
 	 text-decoration: line-through;
 }
 .back3{
-    background: url(/static/images/comingsoon_back.jpg) no-repeat 50% 100%;
+    background-image:url(/static/images/scheduleback1.jpg); no-repeat 50% 100%;
     bottom: -20px;
     background-size: cover;
-	
     position: fixed;
     width: 110%;
     left: -5%;
     top: -5%;
-
 }
 .page{
 	padding-top:50px;
 	font-size:40px;
 }
+
 
 
 .quote{
@@ -291,12 +317,15 @@ font-weight:bold;
 font-size:65px;
 }
 .pre_image{
+	top:42%;
+	
 	position:absolute;
 	width:100%;
 }
 .pre_img{
-	position:absolute;
+		position:absolute;
 	width:15%;
+	filter: grayscale(100%);
 }
 .writer{
 	font-size: 30px;
@@ -307,47 +336,67 @@ display:block;
 .nav_btnm{
 display:none;
 }
-.container{
-	position:absolute;
-	top:250px;
-	width:100%;
-	margin-bottom:100px;
-}
-.paragraph{
-	position:absolute;
-	text-align:center;
-	width:100%;
-	top:200px;
-	color:#fff;
+.designation{
 	font-size:23px;
-	padding:50px;
+	font-family:chase;
 }
-@media only screen and (max-width: 700px) {
+.socialm{
+display:none;
+padding-bottom:10px;
+    margin-top: 25px;
+}
+.copyrightm{
+   display:none;
+}
+
+.socialm a{
+color:#fff;
+
+	text-decoration:none;
+}
+.copyrightm a{
+color:#fff;
+   text-decoration:none;
+}
+#onlymobile{
+	display:none;
+}
+
+.stitle{
+padding-top:70px;  text-align:center; font-size:40px;
+}
+.scotitle{
+ text-align:center; font-size:25px;
+}
+.spara{
+ text-align:center; padding:50px; padding-top:100px; font-size:25px;
+}
+.sinit{
+padding-top:20px;text-align:center; font-size:20px;
+}
+.sngo{
+width:150px;
+margin-top:-20px;
+}
+#foster{
+font-size:45px;
+}
+#little{
+font-size:30px;
+padding-top:20px;
+}
+@media only screen and (max-width: 800px) {
 .sidenav a {
     padding-left:50px;
 
 }
-.copyright {
-    z-index: 9998;
-    position: fixed;
-    right: 15%;
-    font-size: 12px;
-    bottom: 25px;
-}
-.social {
-    position: fixed;
-    bottom: 50px;
-    left: 43%;
-    z-index: 9998;
-}
-
 .title_heading {
     top: 100px;
     font-size: 5vw;
 }
 .quote {
     text-align: left;
-    padding-top: 164px;
+    padding-top:200px;
     padding-left: 22px;
     padding-right: 22px;
     font-size: 5vw;
@@ -358,7 +407,7 @@ display:none;
 
 .title_sub_heading {
  
-    top: 122px;
+    top: 90px;
 
 }
 .nav_btn{
@@ -367,41 +416,165 @@ display:none;
 .nav_btnm{
 display:block;
 }
-.row {
-    width: 100%;
-    margin-top: 210px;
+.copyright{
+	display:none;
 }
-.gal_img {
-    width: 95%;
-}
-.prev, .next {
-    top: 17%;
+.social{
+	display:none;
 }
 
-.container {
-margin-bottom: 10px;
+.socialm{
+ display:block;
+    margin-top: 25px;
+}
+.copyrightm{
+   display:block;
+}
+.list {
+
+    top: 242px;
+
+}
+
+.stitle{
+padding-top:30px;  text-align:center; font-size:25px;
+}
+.scotitle{
+ text-align:center; font-size:15px;
+}
+.spara{
+text-align:center; padding:20px; padding-top:50px;  font-size:15px;
+}
+.sinit{
+padding-top:40px; text-align:center; font-size:15px;
+}
+.sngo{
+width:80px;
+margin-top:-50px;
+}
+#foster{
+font-size:30px;
+}
+#little{
+font-size:20px;
+padding-top:20px;
+}
+}
+</style>
+
+
+<style>
+.cards{
+	margin:10px;
+	background-color:rgba(0,0,0,0.5);
+	width:130px;
+	height:130px;
+	font-size:20px;
+	border-radius:50%;
+	line-height:130px;
+	display:inline-block;
+	color:#fff;
+}
+.cards a{
+	color:#fff;
+	text-decoration:none;
+}
+.cards:hover{
+	background-color:rgba(255,255,255,0.9);
+	color:#000;
+	font-weight:bold;
+}
+
+.cards-img{
+	width:200px;
+	padding:10px;
+}
+.cards-2{
+	overflow:hidden;
+	display:inline-block;
+	background-color:rgba(0,0,0,0.5);
+	margin:20px;
+}
+.cards-title{
+	font-size:30px;
+	padding-top:20px;
+}
+.cards-writeup{
+	padding:20px;
+	font-size:20px;
+	padding-bottom:20px;
+	
+}
+.cards-2-day {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    background-color: rgba(0,0,0,0.5);
+    width: 190px;
+    height: 190px;
+    font-size: 25px;
+    border-radius: 50%;
+    line-height: 190px;
+}
+#asd{
+	top:100%;
 }
 
 
+@media only screen and (max-width: 800px) {
+.cards {
+    margin: 20px;
+    background-color: rgba(0,0,0,0.5);
+    width: 20vw;
+    height: 20vw;
+    font-size: 2.5vw;
+    line-height: 20vw;
 }
+.cards-2-day {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: rgba(0,0,0,0.5);
+    width: 34vw;
+    height: 34vw;
+    font-size: 18px;
+    border-radius: 50%;
+    line-height: 34vw;
+}
+.cards-2 {
+    height:auto;
+    width: 87vw;
+}
+.cards-writeup img{
+	width:100%;
+}
+#asd{
+	top:100%;
+}
+
+
+
+
+}
+
+
+
+
 </style>
 
     </head>
     <body>
-	
-        
+      
 		<div id="mySidenav" class="sidenav">
-		<div class="sidenav_logo"><img src="/static/images/mst_logo.PNG"> </div><div class="sidenav_logo_text">| MST '18</div>
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px;cursor: pointer">&times;</a>
+		<div class="sidenav_logo"> <img src="/static/images/mst_logo.PNG"></div><div class="sidenav_logo_text">| MST '18</div>
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="color:#fff; font-size:50px; cursor: pointer">&times;</a>
 		  <img src="/static/images/sword.png" style="margin-top:0px; padding:20px;">
 		  
 		  <div class="list">
 			  <a href="/">Home</a>
-			  <a href="/about">About</a>
+			  <a  href="/about">About</a>
 			  <a href="/gallery">Gallery</a>
 			  <a href="/informals">Informals</a>
 			   <a href="/register">Register</a>
-              <a href="/social">Social Cause</a>
+               <a href="/social">Social Cause</a>
 			   <a onclick="closeNav()">Schedule</a>
 			  <a href="/team">Team</a>
 		  </div>
@@ -411,7 +584,7 @@ margin-bottom: 10px;
 		
 		<div class="slideshow-container">
 		<!-- TEAM -->
-		  <div class="mySlidess fade">
+		  <div class="mySlides fade">
         <div class="wrapper">
             <ul class="scene unselectable" data-friction-x="0.1" data-friction-y="0.1" data-scalar-x="25" data-scalar-y="15" id="scene2" style="transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
                 <li class="layer" data-depth="0.00" style="position: relative; display: block; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px); transform-style: preserve-3d; backface-visibility: hidden;">
@@ -429,9 +602,9 @@ margin-bottom: 10px;
 		
 		
 			
-		<div class="nav_btn" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:999998;" onclick="openNav()">&#9776;</div>
-		<div class="nav_btnm" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index: 09998;" onclick="openNavm()">&#9776;</div>
-		<div style="position:fixed;     z-index: 9999999;"><a href="/"><img src="/static/images/mst_logo.PNG" class="mnit_logo"></a></div>
+		<div class="nav_btn" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:99999;" onclick="openNav()">&#9776;</div>
+		<div class="nav_btnm" style="font-size:30px;cursor:pointer; position:fixed; right:25px; top:25px; color:#fff; z-index:09998;" onclick="openNavm()">&#9776;</div>
+		<div style="position:fixed;     "><a href="/"><img src="/static/images/mst_logo.PNG" class="mnit_logo"></a></div>
 		<div class="title_heading">
 			Malaviya Sports Tournament '18
 		</div>
@@ -439,8 +612,291 @@ margin-bottom: 10px;
 			Schedule
 			<hr style="width:40%;" color="#fff" noshade>
 		</div>
-		<div class="paragraph">
-			Will be updated soon !!
+		<div class="cards-container" style="position:absolute; top:250px; width:100%; text-align:center;">
+			<a href="#badminton">
+				<div class="cards">
+					Badminton
+				</div>
+			</a>
+			<a href="#basket">
+				<div class="cards">
+					Basket Ball
+				</div>
+			</a>
+			<a href="#chess">
+				<div class="cards">
+					Chess
+				</div>
+			</a>
+			<a href="#cricket">
+				<div class="cards">
+					Cricket
+				</div>
+			</a>
+			<a href="#foot">
+				<div class="cards">
+					Football
+				</div>
+			</a>
+			<a href="#kabbadi">
+				<div class="cards">
+					Kabaddi
+				</div>
+			</a>
+			<a href="#table">
+				<div class="cards">
+					Table Tennis
+				</div>
+			</a>
+			<a href="#volley">
+				<div class="cards">
+					Volley Ball
+				</div>
+			</a>
+			<a href="#cultural">
+				<div class="cards">
+					Cultural
+				</div>
+			</a>
+			
+			
+
+
+		</div>
+		
+		
+		<div class="wrapper" id="asd" style="color:#fff; position:absolute;  height:11000px; width:100%;  background-image:url(/static/images/scheduleback2.jpg); background-size:cover; background-attachment:fixed;">
+			<center>
+				<div class="cards-2-day" id="badminton">
+					Badminton
+				</div>
+				
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Badminton Men
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/mb.jpg">
+						</div>
+					</div>
+					
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Badminton Women
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/wb.jpg">
+						</div>
+					</div>
+					
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="basket">
+					Basket Ball
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Basket Ball
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/bb.jpg">
+						</div>
+					</div>
+					
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="chess">
+					Chess
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Chess Boys
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/mc.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Chess Girls
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/wc.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="cricket">
+					Cricket
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Cricket
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/c.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="foot">
+					Football
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Football
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/f.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="kabbadi">
+					Kabaddi
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Kabaddi Women
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/wk.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="table">
+					Table Tennis
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Table Tennis Men
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/mtt.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Table Tennis Women
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/wtt.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="volley">
+					Volleyball
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Volleyball Men
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/mvb.jpg">
+						</div>
+					</div>
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Volleyball Women
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<img src="/static/images/wvb.jpg">
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="cards-2-day" id="cultural">
+					Cultural
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Day 1
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<div>Stand-up Comedy Performance</div>
+							<div>Band Performance</div>
+							<div>DJ Night</div>
+							<br>
+						</div>
+					</div>
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Day 2
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<div>Opening Ceremony</div>
+							<div>Insync band Performance</div>
+							<div>Rhythmus Dance Performance</div>
+							<div>Fashion Show</div>
+						</div>
+					</div>
+				</div>
+				<div class="cards-2">
+					<div class="cards-content">
+						<div class="cards-title">
+							Day 3
+							<hr style="width:90%;" color="#fff" noshade>
+						</div>
+						<div class="cards-writeup">
+							<div>MST Holi</div>
+							<div>Closing Ceremony</div>
+							<div>Gymnastics Performance</div>
+							<div>Celeb Night</div>
+						</div>
+					</div>
+				</div>
+			</center>
 		</div>
 		
 		
@@ -449,19 +905,16 @@ margin-bottom: 10px;
 		
 
 
-
-
-
-
-
-
-
-
-
-
 		
 		
 		
+		
+		
+		
+		
+		
+		
+
 		
 		
 		
@@ -480,37 +933,35 @@ margin-bottom: 10px;
 		  
 		  </div>
         <!-- Javascript -->
-	<script>
-	
-var slideIndex = 1;
-showSlides(slideIndex);
+		
+		<script>
+			var slideIndex = 1;
+			showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
+			function showSlides(n) {
+			  var i;
+			  var slides = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				  slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				  dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+		</script>
 		<script>
 			function openNav() {
 				document.getElementById("mySidenav").style.width = "350px";
@@ -527,33 +978,12 @@ function showSlides(n) {
 			function closeNavm() {
 				document.getElementById("mySidenav").style.width = "0";
 			}
-			
-			
-			
-			
-		
-
-
-
-var counter=0;
-function start(counter){
-  if(counter < 10){
-    setTimeout(function(){
-      counter++;
-      plusSlides(1);
-      start(counter);
-    }, 1000);
-  }
-}
-start(0);
 		</script>
-
 		
-	
 		
         <script src="/static/files/plugins.js.download"></script>
         <script src="/static/files/jquery.countdown.min.js.download"></script>
         <script src="/static/files/main.js.download"></script>
-	
+		
 	</body>
 	</html>
